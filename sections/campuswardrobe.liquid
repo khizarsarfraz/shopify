@@ -30,6 +30,7 @@
       <div class="image_section">
         {% if section.settings.img3 %}
           <img src="{{ section.settings.img3 | image_url: width: 210 }}" alt="Uploaded Image" />
+          <img src="{{ section.settings.img4 | image_url: width: 210 }}" alt="Uploaded Image" />
         {% endif %}
       </div>
       <div class="content">
@@ -72,6 +73,11 @@
     {
       "type": "image_picker",
       "id": "img2",
+      "label": "Image Card 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "img4",
       "label": "Image Card 2"
     },
     {
