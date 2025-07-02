@@ -1,0 +1,105 @@
+<div class="sectiontest page-width">
+  <div class="main_headingtest">{{ section.settings.main_heading }}</div>
+
+  <div class="cards_wrapper">
+    <div class="cardtest">
+      <div class="image_section">
+        {% if section.settings.img1 %}
+          <img src="{{ section.settings.img1 | image_url: width: 210 }}" alt="Uploaded Image" />
+        {% endif %}
+      </div>
+      <div class="content">
+        <div class="heading">{{ section.settings.heading1 }}</div>
+        <div class="para">{{ section.settings.para1 }}</div>
+      </div>
+    </div>
+
+    <div class="cardtest">
+      <div class="image_section">
+        {% if section.settings.img2 %}
+          <img src="{{ section.settings.img2 | image_url: width: 210 }}" alt="Uploaded Image" />
+        {% endif %}
+      </div>
+      <div class="content">
+        <div class="heading">{{ section.settings.heading2 }}</div>
+        <div class="para">{{ section.settings.para2 }}</div>
+      </div>
+    </div>
+
+    <div class="cardtest">
+      <div class="image_section">
+        {% if section.settings.img3 %}
+          <img src="{{ section.settings.img3 | image_url: width: 210 }}" alt="Uploaded Image" />
+        {% endif %}
+      </div>
+      <div class="content">
+        <div class="heading">{{ section.settings.heading3 }}</div>
+        <div class="para">{{ section.settings.para3 }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "main_heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading1",
+      "label": "Heading Card 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "img1",
+      "label": "Image Card 1"
+    },
+    {
+      "type": "richtext",
+      "id": "para1",
+      "label": "Para Card 1"
+    },
+    {
+      "type": "richtext",
+      "id": "heading2",
+      "label": "Heading Card 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "img2",
+      "label": "Image Card 2"
+    },
+    {
+      "type": "richtext",
+      "id": "para2",
+      "label": "Para Card 2"
+    },
+    {
+      "type": "richtext",
+      "id": "heading3",
+      "label": "Heading Card 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "img3",
+      "label": "Image Card 3"
+    },
+    {
+      "type": "richtext",
+      "id": "para3",
+      "label": "Para Card 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Section",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

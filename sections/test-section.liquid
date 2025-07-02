@@ -1,0 +1,34 @@
+<div class="section">
+  <h1 class="h1-main">{{ section.settings.txt }}</h1>
+  <div class="image">
+    {% if section.settings.image_test %}
+      <img src="{{ section.settings.image_test | image_url: width: 500  }}" alt="Uploaded Image" />
+
+      
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Test Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_test",
+      "label": "Image Display"
+    },
+    {
+      "type": "richtext",
+      "id": "txt",
+      "label": "Text Field"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Field And Image",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

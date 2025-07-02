@@ -1,0 +1,47 @@
+<div class="main-section">
+  <div class="main-image">
+    {{
+  section.settings.hero_image
+  | image_url: width: 3840
+  | image_tag: 
+      width: section.settings.image.width,
+      height: image_height,
+      class: image_class,
+      sizes: sizes,
+      widths: widths,
+      fetchpriority: fetch_priority
+}}
+  </div>
+  <div class="main-heading">
+    <h1 class="h1-main"> {{ section.settings.main_heading }}</h1>
+  </div>
+  
+</div>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_hero",
+      "label": "Main Image"
+    },
+    {
+      "type": "richtext",
+      "id": "main_heading",
+      "label": "Main Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
